@@ -10,7 +10,7 @@ package com.model;
 public class BlogPostCategory {
 	
 	/** The category. */
-	private Category category;
+	private BlogCategory category;
 	
 	/** The blogpost. */
 	private BlogPost blogpost;
@@ -20,7 +20,7 @@ public class BlogPostCategory {
 	 *
 	 * @return the category
 	 */
-	public Category getCategory() {
+	public BlogCategory getCategory() {
 		return category;
 	}
 
@@ -29,7 +29,7 @@ public class BlogPostCategory {
 	 *
 	 * @param category the new category
 	 */
-	public void setCategory(Category category) {
+	public void setCategory(BlogCategory category) {
 		this.category = category;
 	}
 
@@ -57,7 +57,7 @@ public class BlogPostCategory {
 	 * @param category the category
 	 * @param blogpost the blogpost
 	 */
-	public BlogPostCategory(Category category, BlogPost blogpost) {
+	public BlogPostCategory(BlogCategory category, BlogPost blogpost) {
 		super();	
 		this.category = category;
 		this.blogpost = blogpost;
