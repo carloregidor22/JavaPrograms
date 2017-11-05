@@ -35,7 +35,7 @@ public class BlogAuthor implements Serializable{
 	}
 
 	/**
-	 * Instantiates a new blog author.
+	 * Instantiates a new blog author. - This should be a blog author otherwise it should not save the blog post.
 	 *
 	 * @param blogAuthorID
 	 *            the blog author ID
