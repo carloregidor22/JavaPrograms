@@ -9,6 +9,11 @@ package com.model;
  */
 public class BlogUser {
 	
+	@Override
+	public String toString() {
+		return "BlogUser [id=" + id + ", name=" + name + ", email=" + email + ", website=" + website + "]";
+	}
+
 	/** The id. */
 	private int id;
 	

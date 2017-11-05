@@ -17,7 +17,7 @@ public final class Resource {
 	}
 	
 	/** The Constant url. */
-	public static final String url = "jdbc:mysql://127.0.0.1:3306/test";
+	public static final String url = "jdbc:mysql://127.0.0.1:3306/blog";
 	
 	/** The Constant username. */
 	public static final String username = "root";
