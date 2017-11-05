@@ -19,6 +19,25 @@ public class BlogCategory {
 	 * @param enable the enable
 	 * @param dateCreated the date created
 	 */
+
+	/** The Name. */
+	private String Name;
+	
+	/** The name clean. */
+	private String nameClean;
+	
+	/** The enable. */
+	private int enable;
+	
+	/** The date created. */
+	private Date dateCreated;
+
+	/**
+	 * Instantiates a new category.
+	 */
+	public BlogCategory() {
+
+	}
 	public BlogCategory(int category, String name, String nameClean, int enable, Date dateCreated) {
 		super();
 		this.category = category;
@@ -121,23 +140,5 @@ public class BlogCategory {
 		this.dateCreated = dateCreated;
 	}
 
-	/** The Name. */
-	private String Name;
-	
-	/** The name clean. */
-	private String nameClean;
-	
-	/** The enable. */
-	private int enable;
-	
-	/** The date created. */
-	private Date dateCreated;
-
-	/**
-	 * Instantiates a new category.
-	 */
-	public BlogCategory() {
-
-	}
 
 }
