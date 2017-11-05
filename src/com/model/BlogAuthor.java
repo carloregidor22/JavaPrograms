@@ -4,11 +4,18 @@
 package com.model;
 // TODO: Auto-generated Javadoc
 
+import java.io.Serializable;
+
 /**
  * The Class BlogAuthor.
  */
-public class BlogAuthor {
+public class BlogAuthor implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2616712157514540070L;
+
 	/** The blog author ID. */
 	private int blogAuthorID;
 	
