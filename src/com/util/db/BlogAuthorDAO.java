@@ -10,28 +10,54 @@ import java.util.List;
 
 import com.model.BlogAuthor;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class BlogAuthorDAO.
+ */
 public final class BlogAuthorDAO {
 	
+	/** The Constant conn. */
 	protected static final Connection conn = ConnectionDAO.connect();
+	
+	/** The list. */
 	protected static List<BlogAuthor> list = selectAll();
 	
 	
+	/**
+	 * Display blog author.
+	 */
 	public static void displayBlogAuthor() {
 		for (BlogAuthor e : list) {
 			System.out.println(e);
 		}
 	}
+	
+	/**
+	 * Batch delete.
+	 *
+	 * @param listBatch the list batch
+	 */
 	public static void batchDelete(List<BlogAuthor> listBatch) {
 		for (BlogAuthor e : listBatch) {
 			deleteOne(e);
 		}
 	}
 
+	/**
+	 * Delete one.
+	 *
+	 * @param e the e
+	 */
 	public static void deleteOne(BlogAuthor e) {
 		int blog_authorid = e.getBlogAuthorID();
 		delete(blog_authorid);
 	}
 	
+	/**
+	 * Delete.
+	 *
+	 * @param blog_authorid the blog authorid
+	 */
 	public static void delete(int blog_authorid) {
 		String sql = "DELETE FROM blog_author WHERE id = ?";
 
@@ -48,6 +74,11 @@ public final class BlogAuthorDAO {
 
 	}
 	
+	/**
+	 * Batch update.
+	 *
+	 * @param listBatch the list batch
+	 */
 	public static void batchUpdate(List<BlogAuthor> listBatch) {
 		for (BlogAuthor e : listBatch) {
 			updateOne(e);
@@ -55,6 +86,11 @@ public final class BlogAuthorDAO {
 		
 	}
 
+	/**
+	 * Update one.
+	 *
+	 * @param e the e
+	 */
 	public static void updateOne(BlogAuthor e) {
 		int blog_authorid = e.getBlogAuthorID();
 		String first = e.getFirstName();
@@ -65,13 +101,12 @@ public final class BlogAuthorDAO {
 
 	
 	/**
-	 * Update data of a warehouse specified by the id
+	 * Update data of a warehouse specified by the id.
 	 *
-	 * @param id
-	 * @param name
-	 *            name of the warehouse
-	 * @param capacity
-	 *            capacity of the warehouse
+	 * @param blog_authorid the blog authorid
+	 * @param first the first
+	 * @param lastname the lastname
+	 * @param displayName the display name
 	 */
 	public static void update(int blog_authorid, String first, String lastname, String displayName) {
 		String sql = "UPDATE blog.blog_author SET display_name = ?, " + "first_name = ?, " + "last_name = ? " + "WHERE id = ?";
@@ -90,12 +125,22 @@ public final class BlogAuthorDAO {
 		}
 	}
 	
+	/**
+	 * Batch insert.
+	 *
+	 * @param listBatch the list batch
+	 */
 	public static void batchInsert(List<BlogAuthor> listBatch) {
 		for (BlogAuthor e : listBatch) {
 			insertOne(e);
 		}
 	}
 	
+	/**
+	 * Insert one.
+	 *
+	 * @param e the e
+	 */
 	public static void insertOne(BlogAuthor e) {
 		int blog_authorid = e.getBlogAuthorID();
 		String first = e.getFirstName();
@@ -103,6 +148,14 @@ public final class BlogAuthorDAO {
 		String  lastName = e.getLastName();
 		insert(first, lastName, displayName);
 	}
+	
+	/**
+	 * Insert.
+	 *
+	 * @param first the first
+	 * @param lastname the lastname
+	 * @param displayName the display name
+	 */
 	private static void insert(String first, String lastname, String displayName) {
 		String sql = "INSERT INTO blog_author (display_name, first_name, last_name) VALUES(?,?,?)";
 
@@ -118,10 +171,21 @@ public final class BlogAuthorDAO {
 
 	}
 
+	/**
+	 * Gets the maximum.
+	 *
+	 * @param list the list
+	 * @return the maximum
+	 */
 	public static int getMaximum(List<BlogAuthor> list) {
 		return list.size();
 	}
 	
+	/**
+	 * Select all.
+	 *
+	 * @return the list
+	 */
 	@SuppressWarnings("unchecked")
 	public static List<BlogAuthor> selectAll() {
 		list = new LinkedList<BlogAuthor>();
@@ -142,6 +206,12 @@ public final class BlogAuthorDAO {
 		return list;
 	}
 
+	/**
+	 * Select one.
+	 *
+	 * @param authorId the author id
+	 * @return the blog author
+	 */
 	public static BlogAuthor selectOne(int authorId) {
 		String sql = "SELECT id, display_name, first_name, last_name FROM blog_author WHERE id = " + authorId;
 		BlogAuthor e = null;
@@ -160,6 +230,12 @@ public final class BlogAuthorDAO {
 		return e;
 	}
 
+	/**
+	 * Select one.
+	 *
+	 * @param lastName the last name
+	 * @return the blog author
+	 */
 	public static BlogAuthor selectOne(String lastName) {
 		String sql = "SELECT id, display_name, first_name, last_name FROM blog_author WHERE last_name LIKE '%" + lastName + "%'";
 		BlogAuthor e = null;
